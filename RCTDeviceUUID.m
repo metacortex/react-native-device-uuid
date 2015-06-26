@@ -19,13 +19,13 @@ RCT_EXPORT_METHOD(getUUID:(RCTResponseSenderBlock)callback)
 {
   NSUUID *deviceId;
 
-#if TARGET_IPHONE_SIMULATOR
-  deviceId = [[NSUUID alloc]initWithUUIDString:@"UUID-STRING-VALUE"];
-#else
+// #if TARGET_IPHONE_SIMULATOR
+  // deviceId = [[NSUUID alloc]initWithUUIDString:@"UUID-STRING-VALUE"];
+// #else
   deviceId = [UIDevice currentDevice].identifierForVendor;
-#endif
+// #endif
 
-  RCTLogInfo(@"Pretending to create an event");
+  // RCTLogInfo(@"Pretending to create an event");
   callback(@[[NSNull null], [NSArray arrayWithObjects: [deviceId UUIDString], nil]]);
 }
 
